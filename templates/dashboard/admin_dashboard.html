@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - Library Management{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-primary shadow-sm">
+      <div class="card-body">
+        <h5>Total Members</h5>
+        <h2>{{ metrics.total_members }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-success shadow-sm">
+      <div class="card-body">
+        <h5>Active Members</h5>
+        <h2>{{ metrics.active_members }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-danger shadow-sm">
+      <div class="card-body">
+        <h5>Expired Members</h5>
+        <h2>{{ metrics.expired_members }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-info shadow-sm">
+      <div class="card-body">
+        <h5>Available Seats</h5>
+        <h2>{{ metrics.available_seats }}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-secondary shadow-sm">
+      <div class="card-body">
+        <h5>Occupied Seats</h5>
+        <h2>{{ metrics.occupied_seats }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-dark shadow-sm">
+      <div class="card-body">
+        <h5>Monthly Revenue</h5>
+        <h2>${{ metrics.monthly_revenue or 0 }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-warning shadow-sm">
+      <div class="card-body">
+        <h5>Total Revenue</h5>
+        <h2>${{ metrics.total_revenue or 0 }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-3">
+    <div class="card card-summary text-white bg-success shadow-sm">
+      <div class="card-body">
+        <h5>Seats</h5>
+        <h2>{{ metrics.total_seats }}</h2>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

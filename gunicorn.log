@@ -1,0 +1,121 @@
+nohup: ignoring input
+[2026-06-16 13:13:29 +0000] [5861] [INFO] Starting gunicorn 26.0.0
+[2026-06-16 13:13:29 +0000] [5861] [INFO] Listening at: http://127.0.0.1:8000 (5861)
+[2026-06-16 13:13:29 +0000] [5861] [INFO] Using worker: gthread
+[2026-06-16 13:13:29 +0000] [5862] [INFO] Booting worker with pid: 5862
+[2026-06-16 13:13:29 +0000] [5863] [INFO] Booting worker with pid: 5863
+[2026-06-16 13:13:29 +0000] [5861] [INFO] Control socket listening at /run/user/1000/gunicorn.ctl
+[2026-06-16 13:13:30,000] INFO in application: Library Management startup
+[2026-06-16 13:13:30,157] INFO in application: Library Management startup
+[2026-06-16 13:13:50,353] INFO in auth: Login attempt for admin@example.com
+[2026-06-16 13:13:50,356] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:13:50,463] INFO in auth: Login lookup: user_found=True, password_ok=True, is_active=True
+[2026-06-16 13:13:50,463] INFO in auth: Login success for admin@example.com
+[2026-06-16 13:15:19,775] INFO in auth: Login attempt for admin@example.com
+[2026-06-16 13:15:19,778] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:15:19,882] INFO in auth: Login lookup: user_found=True, password_ok=True, is_active=True
+[2026-06-16 13:15:19,882] INFO in auth: Login success for admin@example.com
+[2026-06-16 13:17:49,975] INFO in auth: Login attempt for admin@example.com
+[2026-06-16 13:17:49,976] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:17:50,079] INFO in auth: Login lookup: user_found=True, password_ok=False, is_active=True
+[2026-06-16 13:17:50,079] INFO in auth: Login failed for admin@example.com
+[2026-06-16 13:18:35,939] INFO in auth: Login attempt for admin@example.com
+[2026-06-16 13:18:35,940] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:18:36,046] INFO in auth: Login lookup: user_found=True, password_ok=True, is_active=True
+[2026-06-16 13:18:36,046] INFO in auth: Login success for admin@example.com
+[2026-06-16 13:19:03,149] INFO in auth: Login attempt for member@example.com
+[2026-06-16 13:19:03,150] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:19:03,256] INFO in auth: Login lookup: user_found=True, password_ok=True, is_active=True
+[2026-06-16 13:19:03,256] INFO in auth: Login success for member@example.com
+[2026-06-16 13:19:28,254] ERROR in app: Exception on /member/dashboard [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/routes/member.py", line 17, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/routes/member.py", line 29, in dashboard
+    return render_template("dashboard/member_dashboard.html", member=member, active_bookings=active_bookings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ec2-user/download/library_management/templates/dashboard/member_dashboard.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ec2-user/download/library_management/templates/base.html", line 121, in top-level template code
+    {% block content %}
+  File "/home/ec2-user/download/library_management/templates/dashboard/member_dashboard.html", line 22, in block 'content'
+    <h2>{{ metrics.total_members }}</h2>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'metrics' is undefined
+[2026-06-16 13:19:31,690] ERROR in app: Exception on /member/dashboard [GET]
+Traceback (most recent call last):
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/routes/member.py", line 17, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/routes/member.py", line 29, in dashboard
+    return render_template("dashboard/member_dashboard.html", member=member, active_bookings=active_bookings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/ec2-user/download/library_management/templates/dashboard/member_dashboard.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/ec2-user/download/library_management/templates/base.html", line 121, in top-level template code
+    {% block content %}
+  File "/home/ec2-user/download/library_management/templates/dashboard/member_dashboard.html", line 22, in block 'content'
+    <h2>{{ metrics.total_members }}</h2>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ec2-user/download/library_management/venv/lib64/python3.12/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'metrics' is undefined
+[2026-06-16 13:20:01,827] INFO in auth: Login attempt for admin@example.com
+[2026-06-16 13:20:01,828] INFO in auth: DB URI: sqlite:////home/ec2-user/download/library_management/library.db | resolved_db_path: /home/ec2-user/download/library_management/library.db | exists: True | size: 53248 | users_in_db: 2 | cwd: /home/ec2-user/download/library_management
+[2026-06-16 13:20:02,322] INFO in auth: Login lookup: user_found=True, password_ok=True, is_active=True
+[2026-06-16 13:20:02,322] INFO in auth: Login success for admin@example.com
