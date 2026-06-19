@@ -14,7 +14,7 @@ def calculate_metrics():
     expired_members = Member.query.filter_by(membership_status="Expired").count()
     total_seats = Seat.query.count()
     occupied_seats = Seat.query.filter_by(status="Occupied").count()
-    available_seats = Seat.query.filter_by(status="Available").count()
+    available_seats = total_seats - occupied_seats
     monthly_revenue = Payment.query.filter(Payment.payment_date >= date(date.today().year, date.today().month, 1)).with_entities(db.func.coalesce(db.func.sum(Payment.amount), 0)).scalar()
     total_revenue = Payment.query.with_entities(db.func.coalesce(db.func.sum(Payment.amount), 0)).scalar()
     return {
