@@ -39,12 +39,14 @@ def create_app():
     from routes.member import member_bp
     from routes.main import main_bp
     from routes.api import api_bp
+    from routes.attendance import attendance_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(admin_bp, url_prefix="/admin")
     app.register_blueprint(member_bp, url_prefix="/member")
     app.register_blueprint(main_bp)
     app.register_blueprint(api_bp)
+    app.register_blueprint(attendance_bp, url_prefix="/admin")
 
     if not os.path.exists("logs"):
         os.mkdir("logs")

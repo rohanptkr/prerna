@@ -19,6 +19,7 @@ class Member(db.Model):
     user = db.relationship("User", back_populates="member")
     bookings = db.relationship("Booking", back_populates="member", cascade="all, delete-orphan")
     payments = db.relationship("Payment", back_populates="member", cascade="all, delete-orphan")
+    attendance_records = db.relationship("Attendance", back_populates="member", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Member {self.full_name}>"

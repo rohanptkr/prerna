@@ -4,3 +4,4 @@ from .member import Member
 from .seat import Seat
 from .booking import Booking
 from .payment import Payment
+from .attendance import Attendance
