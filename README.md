@@ -1,6 +1,6 @@
-# Rental Library Management System
+# Prerna Abhyasika
 
-A production-ready Flask rental library management application built for AWS Elastic Beanstalk with SQLite development support and MySQL/Amazon RDS compatibility.
+A production-ready Flask Prerna Abhyasika application built for AWS Elastic Beanstalk with SQLite development support and MySQL/Amazon RDS compatibility.
 
 ## Features
 
